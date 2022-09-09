@@ -25,7 +25,7 @@ printf "$IMAGE_NAME"
 printf "\n##################################\n"
 printf "\nPulling cached $IMAGE_NAME image\n"
 # build new image (latest):
-printf "\n\nBuilding $IMAGE_NAME image\n"
+printf "\n\nBuilding image $IMAGE_NAME:${VERSION_TAG}\n"
 
 docker build \
     --progress=plain \
