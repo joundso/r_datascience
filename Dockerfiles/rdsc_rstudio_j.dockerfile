@@ -5,14 +5,14 @@ LABEL org.label-schema.schema-version="1.0" \
 
 ARG \
     ## Quarto: https://github.com/quarto-dev/quarto-cli/releases
-    QUARTO_VERSION="1.2.129" \
+    QUARTO_VERSION="1.2.174" \
 
     ## RStudio: 
     ## - Semi-Stable: https://www.rstudio.com/products/rstudio/download/preview/
     ## - Pre-Relese Builds: https://dailies.rstudio.com/rstudio/spotted-wakerobin/server/jammy/
     ##   or: https://dailies.rstudio.com/rstudio/
     ##   or: https://dailies.rstudio.com/rstudio/elsbeth-geranium/server/jammy-amd64/
-    RSTUDIO_VERSION="2022.11.0-daily-187"
+    RSTUDIO_VERSION="2022.11.0-daily-236"
 
 # USER ${RSESSION_USER}
 
