@@ -76,6 +76,8 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
     ## `missForest` for imputation of missing values:
     missForest \
     mlbench \
+    ## Mixed model (for) repeated measurements:
+    mmrm \
     naivebayes \
     odbc \ 
     openssl \ 
