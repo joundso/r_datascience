@@ -12,22 +12,22 @@ ARG NCPUS=${NCPUS:--1}
 
 RUN install2.r --error --skipinstalled -n $NCPUS \
     abind \
-    bigmemory \ 
-    billboarder \ 
+    bigmemory \
+    billboarder \
     bookdown \
-    class \ 
+    class \
     cleaR \
-    cluster \ 
-    ClusterR \ 
-    config \ 
-    covr \ 
-    cowplot \ 
+    cluster \
+    ClusterR \
+    config \
+    covr \
+    cowplot \
     curl \
     data.table \
     daterangepicker \
     DBI  \
     desc \
-    DescTools \ 
+    DescTools \
     DescrTab2 \
     devtools \
     distill \
@@ -38,119 +38,121 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
     dtplyr \
     dunn.test \
     effects \
-    fhircrackr \ 
+    emmeans \
+    fhircrackr \
     finalfit \
-    foreach \ 
-    formatR \ 
+    foreach \
+    formatR \
     # DQAstats:
-    future \ 
+    future \
     # DQAstats:
     future.apply \
     ggfortify \
-    ggplot2 \ 
-    ggpubr \ 
+    ggplot2 \
+    ggpubr \
     ggside \
     ggstatsplot \
     gtsummary \
     gplots \
     highcharter \
-    Hmisc \ 
+    Hmisc \
     httr \
     influxdbr \
-    jpeg \ 
+    jpeg \
     jsonlite \
-    kableExtra \ 
+    kableExtra \
     knitr \
     languageserver \
     ## For xaringan:
     leaflet \
-    lintr \ 
+    lintr \
     logger \
     lubridate \
-    markdown \ 
-    Matrix \ 
+    markdown \
+    Matrix \
     metathis \
     ## `mice` for imputation of missing values:
     mice \
-    microbenchmark \ 
+    microbenchmark \
     ## `missForest` for imputation of missing values:
     missForest \
     mlbench \
     ## Mixed model (for) repeated measurements:
     mmrm \
     naivebayes \
-    odbc \ 
-    openssl \ 
+    odbc \
+    openssl \
     openxlsx \
     pagedown \
-    parallel \ 
-    parsedate \ 
-    pheatmap \ 
-    plotly \ 
-    plyr \ 
+    parallel \
+    parsedate \
+    pheatmap \
+    plotly \
+    plyr \
     psych \
     quarto \
-    R.utils \ 
-    R6 \ 
+    R.utils \
+    R6 \
     rapportools \
     # rattle \
-    rcmdcheck \ 
-    RCurl \ 
+    rcmdcheck \
+    RCurl \
     reactable \
-    readr \ 
-    redcapAPI \ 
+    readr \
+    redcapAPI \
     REDCapR \
     RefManageR \
-    remotes \ 
+    remotes \
     report \
     ## Reproducible Examples:
     reprex \
-    reshape2 \ 
+    reshape2 \
     # reticulate \
-    rJava \ 
-    RJDBC \ 
+    rJava \
+    RJDBC \
     RJSONIO \
-    rlang \ 
-    rmarkdown \ 
-    Rmisc \ 
-    roxygen2 \ 
-    RPostgres \ 
-    RSQLite \ 
+    rlang \
+    rmarkdown \
+    Rmisc \
+    roxygen2 \
+    RPostgres \
+    RSQLite \
     rstudioapi \
     see \
-    shiny \ 
-    shinyalert \ 
-    shinydashboard \ 
-    shinyFiles \ 
-    shinyjs \ 
-    shinytest \ 
-    shinythemes \ 
-    shinyWidgets \ 
-    sqldf \  
-    styler \ 
-    summarytools \ 
+    shiny \
+    shinyalert \
+    shinydashboard \
+    shinyFiles \
+    shinyjs \
+    shinytest \
+    shinythemes \
+    shinyWidgets \
+    sjPlot \
+    sqldf \
+    styler \
+    summarytools \
     sunburstR \
     survival \
     survminer \
-    testthat \ 
-    tidyr \ 
-    tidyverse \ 
-    timeDate \ 
+    testthat \
+    tidyr \
+    tidyverse \
+    timeDate \
     tinytex \
-    tiff \ 
+    tiff \
     treemap \
-    urltools \ 
-    usethis \ 
+    urltools \
+    usethis \
     utf8 \
     ## `VIM` for visualizing missing values:
     VIM \
-    wesanderson \ 
-    wordcloud \ 
+    wesanderson \
+    wordcloud \
     wordcloud2 \
     xaringan \
-    xfun \ 
+    xfun \
     xgboost \
-    XML \ 
+    XML \
     xml2 \
     yaml \
     zip \
@@ -164,47 +166,47 @@ RUN R -q -e "tinytex::install_tinytex()"
 
 ENV PATH="/home/${RSESSION_USER}/bin:/home/${RSESSION_USER}/.TinyTeX/bin/x86_64-linux:${PATH}"
 
-ARG tiny="'amsfonts', \ 
-    'amsmath', \ 
-    'atveryend', \ 
-    'babel', \ 
-    'babel-german', \ 
-    'caption', \ 
-    'colortbl', \ 
-    'dehyph-exptl', \ 
-    'ec', \ 
-    'environ', \ 
-    'epstopdf-pkg', \ 
-    'float', \ 
-    'geometry', \ 
-    'graphics', \ 
-    'graphics-def', \ 
-    'hycolor', \ 
-    'hyperref', \ 
-    'hyphen-german', \ 
-    'iftex', \ 
-    'koma-script', \ 
-    'latex-graphics-dev', \ 
-    'latexconfig', \ 
-    'lm', \ 
-    'makecell', \ 
-    'multirow', \ 
-    'oberdiek', \ 
-    'pdfcrop', \ 
-    'pdflscape', \ 
-    'tabu', \ 
-    'tex-gyre-math', \ 
-    'texlive-scripts', \ 
-    'threeparttable', \ 
-    'threeparttablex', \ 
-    'titling', \ 
-    'tools', \ 
-    'trimspaces', \ 
-    'ulem', \ 
-    'varwidth', \ 
-    'wrapfig', \ 
-    'ulem', \ 
-    'url', \ 
+ARG tiny="'amsfonts', \
+    'amsmath', \
+    'atveryend', \
+    'babel', \
+    'babel-german', \
+    'caption', \
+    'colortbl', \
+    'dehyph-exptl', \
+    'ec', \
+    'environ', \
+    'epstopdf-pkg', \
+    'float', \
+    'geometry', \
+    'graphics', \
+    'graphics-def', \
+    'hycolor', \
+    'hyperref', \
+    'hyphen-german', \
+    'iftex', \
+    'koma-script', \
+    'latex-graphics-dev', \
+    'latexconfig', \
+    'lm', \
+    'makecell', \
+    'multirow', \
+    'oberdiek', \
+    'pdfcrop', \
+    'pdflscape', \
+    'tabu', \
+    'tex-gyre-math', \
+    'texlive-scripts', \
+    'threeparttable', \
+    'threeparttablex', \
+    'titling', \
+    'tools', \
+    'trimspaces', \
+    'ulem', \
+    'varwidth', \
+    'wrapfig', \
+    'ulem', \
+    'url', \
     'xcolor'"
 
 RUN R -q -e "tinytex::tlmgr_conf(); \
@@ -224,8 +226,8 @@ RUN chown -R ${RSESSION_USER}:${RSESSION_USER} /home/${RSESSION_USER}/.TinyTeX &
 # 1) look if everything is installed correctely (if not, you might add system-dependencies in the base_image)
 # 2) update all packages to the newest version
 # 3) start rstudio-server
-# ARG allpackages="\"$a\" \"$b\" \"$c\" \"$d\" \"$e\" \"$f\" \"$g\" \"$h\" \ 
-#     \"$i\" \"$j\" \"$k\" \"$l\" \"$m\" \"$n\" \"$o\" \"$p\" \"$q\" \"$r\" \ 
+# ARG allpackages="\"$a\" \"$b\" \"$c\" \"$d\" \"$e\" \"$f\" \"$g\" \"$h\" \
+#     \"$i\" \"$j\" \"$k\" \"$l\" \"$m\" \"$n\" \"$o\" \"$p\" \"$q\" \"$r\" \
 #     \"$s\" \"$t\" \"$u\" \"$v\" \"$w\" \"$x\" \"$y\" \"$z\""
 
 # RUN export packages_format="$(echo $(echo ${allpackages} | sed -e 's/ /\"\, \"/g') | sed -e 's/\"\"/\"/g')" && \
