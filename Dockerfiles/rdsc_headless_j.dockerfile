@@ -128,6 +128,7 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
     shinythemes \
     shinyWidgets \
     sjPlot \
+    sjtable2df \
     sqldf \
     styler \
     summarytools \
