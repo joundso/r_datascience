@@ -22,6 +22,7 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
     config \
     covr \
     cowplot \
+    crosstable \
     curl \
     data.table \
     daterangepicker \
