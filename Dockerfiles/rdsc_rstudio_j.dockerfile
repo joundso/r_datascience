@@ -5,14 +5,14 @@ LABEL org.label-schema.schema-version="1.0" \
 
 ARG \
     ## Quarto: https://github.com/quarto-dev/quarto-cli/releases
-    QUARTO_VERSION="1.3.34" \
+    QUARTO_VERSION="1.3.56" \
 
     ## RStudio: 
     ## - Semi-Stable: https://www.rstudio.com/products/rstudio/download/preview/
     ## - Pre-Relese Builds: https://dailies.rstudio.com/rstudio/spotted-wakerobin/server/jammy/
     ##   or: https://dailies.rstudio.com/rstudio/
     ##   or: https://dailies.rstudio.com/rstudio/cherry-blossom/server/jammy-amd64/
-    RSTUDIO_VERSION="2023.03.0-daily-4"
+    RSTUDIO_VERSION="2023.03.0-daily-30"
 
 # USER ${RSESSION_USER}
 
@@ -26,6 +26,9 @@ ARG \
 RUN curl -o quarto-linux-amd64.deb -L https://github.com/quarto-dev/quarto-cli/releases/download/v${QUARTO_VERSION}/quarto-${QUARTO_VERSION}-linux-amd64.deb && \
     dpkg -i quarto-linux-amd64.deb && \
     rm -f quarto-linux-amd64.deb
+
+## Add author template:
+RUN quarto add kapsner/authors-block
 
 
 ## UBUNTU_CODENAME (22.04 = jammy):
