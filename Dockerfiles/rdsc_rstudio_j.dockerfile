@@ -28,7 +28,7 @@ RUN curl -o quarto-linux-amd64.deb -L https://github.com/quarto-dev/quarto-cli/r
     rm -f quarto-linux-amd64.deb
 
 ## Add author template:
-RUN quarto add kapsner/authors-block
+RUN quarto add kapsner/authors-block --no-prompt
 
 
 ## UBUNTU_CODENAME (22.04 = jammy):

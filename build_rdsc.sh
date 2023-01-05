@@ -6,6 +6,14 @@ set -o pipefail
 source ./.env
 export DOCKER_BUILDKIT=1
 
+if [ -f "$CUSTOM_ENV_FILE" ]; then
+    echo "Custom env file ${CUSTOM_ENV_FILE} exists. Sourcing it now."
+    source ${CUSTOM_ENV_FILE}
+else 
+    echo "NO custom env file exists."
+fi
+
+
 ## Create a new multi-architecture builder (if you have no one yet):
 # docker buildx create --name mybuilder
 # docker buildx use mybuilder
@@ -52,6 +60,7 @@ docker build \
     --label "org.label-schema.vsc-url=https://github.com/joundso/r_datascience/blob/master/Dockerfiles/$IMAGE_NAME.dockerfile" \
     --label "org.label-schema.vcs-ref=$(git rev-parse HEAD)" \
     --label "org.label-schema.version=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+    --build-arg GITHUB_PAT=${GITHUB_PAT} \
     -f ./Dockerfiles/$IMAGE_NAME.dockerfile \
     -t $REGISTRY_PREFIX/$IMAGE_NAME . 2>&1 | tee ./log_$IMAGE_NAME.log
 
@@ -83,6 +92,7 @@ docker build \
     --label "org.label-schema.vsc-url=https://github.com/joundso/r_datascience/blob/master/Dockerfiles/$IMAGE_NAME.dockerfile" \
     --label "org.label-schema.vcs-ref=$(git rev-parse HEAD)" \
     --label "org.label-schema.version=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+    --build-arg GITHUB_PAT=${GITHUB_PAT} \
     -f ./Dockerfiles/$IMAGE_NAME.dockerfile \
     -t $REGISTRY_PREFIX/$IMAGE_NAME . 2>&1 | tee ./log_$IMAGE_NAME.log
 printf "\n\nPushing $IMAGE_NAME image (latest)\n"
@@ -111,6 +121,7 @@ docker build \
     --label "org.label-schema.vsc-url=https://github.com/joundso/r_datascience/blob/master/Dockerfiles/$IMAGE_NAME.dockerfile" \
     --label "org.label-schema.vcs-ref=$(git rev-parse HEAD)" \
     --label "org.label-schema.version=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+    --build-arg GITHUB_PAT=${GITHUB_PAT} \
     -f ./Dockerfiles/$IMAGE_NAME.dockerfile \
     -t $REGISTRY_PREFIX/$IMAGE_NAME . 2>&1 | tee ./log_$IMAGE_NAME.log
 printf "\n\nPushing $IMAGE_NAME image (latest)\n"
@@ -140,6 +151,7 @@ docker build \
     --label "org.label-schema.vsc-url=https://github.com/joundso/r_datascience/blob/master/Dockerfiles/$IMAGE_NAME.dockerfile" \
     --label "org.label-schema.vcs-ref=$(git rev-parse HEAD)" \
     --label "org.label-schema.version=$(date -u +'%Y-%m-%dT%H:%M:%SZ')" \
+    --build-arg GITHUB_PAT=${GITHUB_PAT} \
     --build-arg DISPLAY=${DISPLAY} \
     -f ./Dockerfiles/$IMAGE_NAME.dockerfile \
     -t $REGISTRY_PREFIX/rdsc_rstudio_j . 2>&1 | tee ./log_$IMAGE_NAME.log
