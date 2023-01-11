@@ -287,7 +287,10 @@ RUN R -q -e "remotes::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/
     ## https://cran.r-project.org/package=RGtk2
     ## here:)
     install.packages('https://cran.r-project.org/src/contrib/Archive/RGtk2/RGtk2_2.20.36.3.tar.gz', repos=NULL); \
-    install.packages('rattle', repos='https://rattle.togaware.com', type='source') \
+    install.packages('rattle', repos='https://rattle.togaware.com', type='source'); \
+
+    ## Stuff to don't repeat myself:
+    remotes::install_github('kapsner/kdry') \
     "
 
 ## CRAN packages with my participation:
