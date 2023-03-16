@@ -5,14 +5,14 @@ LABEL org.label-schema.schema-version="1.0" \
 
 ARG \
     ## Quarto: https://github.com/quarto-dev/quarto-cli/releases
-    QUARTO_VERSION="1.3.235" \
+    QUARTO_VERSION="1.3.272" \
 
     ## RStudio: 
     ## - Semi-Stable: https://www.rstudio.com/products/rstudio/download/preview/
     ## - Pre-Relese Builds: https://dailies.rstudio.com/rstudio/spotted-wakerobin/server/jammy/
     ##   or: https://dailies.rstudio.com/rstudio/
     ##   or: https://dailies.rstudio.com/rstudio/mountain-hydrangea/server/jammy-amd64/
-    RSTUDIO_VERSION="2023.05.0-daily-19"
+    RSTUDIO_VERSION="2023.05.0-daily-60"
 
 # USER ${RSESSION_USER}
 
@@ -40,9 +40,10 @@ ENV RSTUDIO_FILE="rstudio-server-${RSTUDIO_VERSION}-amd64.deb"
 
 RUN wget \
     -O rstudio_installer.deb \
-    -q https://s3.amazonaws.com/rstudio-ide-build/server/$(lsb_release -cs)/amd64/${RSTUDIO_FILE}
+    -q https://s3.amazonaws.com/rstudio-ide-build/server/$(lsb_release -cs)/amd64/${RSTUDIO_FILE} && \
     # -q https://download2.rstudio.org/server/$(lsb_release -cs)/amd64/${RSTUDIO_FILE}
-
+    dpkg -i rstudio_installer.deb && \
+    rm -f rstudio_installer.deb
 
 ## install gdebi here, required to install rstudio
 ## (gdebi will fail without sudo)
@@ -54,13 +55,12 @@ RUN wget \
 
 
 # RUN gdebi -n ${RSTUDIO_FILE}
-RUN dpkg -i rstudio_installer.deb
-RUN rm -f rstudio_installer.deb
 
-ENV QUARTO_BASE=/usr/lib/rstudio-server/bin/quarto/bin
-ENV QUARTO_PATH=${QUARTO_BASE}/quarto \
-    PANDOC_BASE=${QUARTO_BASE}/tools
-ENV PATH=${QUARTO_BASE}:${PANDOC_BASE}:${PATH}
+
+ENV QUARTO_BASE=/usr/lib/rstudio-server/bin/quarto/bin \
+    QUARTO_PATH=${QUARTO_BASE}/quarto \
+    PANDOC_BASE=${QUARTO_BASE}/tools \
+    PATH=${QUARTO_BASE}:${PANDOC_BASE}:${PATH}
 
 # overwrite headless .Rprofile
 RUN echo "options(shiny.port = 3838)" > /home/${RSESSION_USER}/.Rprofile && \
@@ -77,11 +77,12 @@ RUN chown -R ${RSESSION_USER}:${RSESSION_USER} /home/${RSESSION_USER}/.config/ &
 # add PATH to a bash_profile script (workaround so that path is available in rstudio\"s terminal)
 # https://support.rstudio.com/hc/en-us/articles/115010737148-Using-the-RStudio-Terminal#env
 # https://docs.rstudio.com/ide/server-pro/1.2.1293-1/r-sessions.html
-RUN echo "export PATH=${PATH}" >> /home/${RSESSION_USER}/.bash_profile && chmod +x /home/${RSESSION_USER}/.bash_profile
+RUN echo "export PATH=${PATH}" >> /home/${RSESSION_USER}/.bash_profile && \
+    chmod +x /home/${RSESSION_USER}/.bash_profile && \
 
-# set PATH for all users
-RUN echo "PATH=${PATH}" >> /etc/R/Renviron
-RUN echo "PATH=${PATH}" >> /etc/environment
+    # set PATH for all users
+    echo "PATH=${PATH}" >> /etc/R/Renviron && \
+    echo "PATH=${PATH}" >> /etc/environment
 
 ########################
 ## Remove packages no longer needed in the final container:
