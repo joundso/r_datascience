@@ -73,6 +73,7 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     openjdk-17-jdk \
     python3 \
     python3-pip \
+    python3.10-dev \
     software-properties-common \
     tar \
     unixodbc-dev \

@@ -300,9 +300,21 @@ RUN for package in $pack; do \
     done && \
     rm -rf /tmp/*
 
+
+
 USER root
 ## Change rights to access packages as user 'user':
 # RUN chown -R ${RSESSION_USER}:${RSESSION_USER} /usr/local/lib/R/site-library
+
+RUN yes | pip install --no-cache-dir \
+    # git+https://github.com/miracum/dqa-mdr-connector.git && \
+    git+https://github.com/miracum/dqa-mdr-connector@development && \
+    # clear caches
+    rm -rf /var/lib/apt/lists/* && \
+    rm -rf /tmp/* && \
+    rm -rf /root/.cache/pip/* && \
+    rm -rf /home/${USER_UID}/.cache/pip/* && \
+    apt-get clean && apt-get autoclean && apt-get autoremove -y
 
 # install sudo here, required for rstudio:
 RUN apt-get update && apt-get install -y --no-install-recommends \
