@@ -12,6 +12,7 @@ ARG NCPUS=${NCPUS:--1}
 
 RUN install2.r --error --skipinstalled -n $NCPUS \
     abind \
+    autonewsmd \
     bigmemory \
     billboarder \
     bookdown \
