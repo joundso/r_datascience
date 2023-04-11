@@ -20,7 +20,8 @@
             "Plots",
             "Packages",
             "Help",
-            "Viewer"
+            "Viewer",
+            "Presentations"
         ],
         "console_left_on_top": false,
         "console_right_on_top": true
@@ -30,7 +31,6 @@
     "continue_comments_on_newline": true,
     "highlight_selected_line": true,
     "show_invisibles": true,
-    "show_indent_guides": true,
     "syntax_color_console": true,
     "highlight_r_function_calls": true,
     "console_line_length_limit": 2000,
@@ -63,8 +63,8 @@
     "rainbow_parentheses": true,
     "server_editor_font_enabled": true,
     "server_editor_font": "JetBrains Mono",
-    "visual_markdown_editing_is_default": false,
     "show_doc_outline_rmd": true,
-    "chunk_output_type": "console",
-    "default_encoding": "UTF-8"
+    "default_encoding": "UTF-8",
+    "insert_native_pipe_operator": true,
+    "jobs_tab_visibility": "shown"
 }
