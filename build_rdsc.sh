@@ -158,5 +158,7 @@ docker build \
 docker tag $REGISTRY_PREFIX/rdsc_rstudio_j $REGISTRY_PREFIX/rdsc_rstudio_j:$VERSION_TAG
 ## Don't push this image! It contains the potential sensitive env vars!
 
+bash ./update_news.sh
+
 echo 'Hooray :-)'
 exit 0

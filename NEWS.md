@@ -1,5 +1,374 @@
 # R for datascience
 
+## Unreleased (2023-04-11)
+
+#### New Features
+
+* updated RStudio to `2023.05.0-daily-210` and quarto to `1.3.313`
+* added `autonewsmd` and updated RStudio and Quarto
+* included `pythdon-dev` and dqa-python package
+#### Others
+
+* added native pipe as default to RStudio settings
+* updated RStudio to `2023.05.0-daily-124` and quarto to `1.3.287`
+* (deps): update ardalanamini/auto-changelog action to v3 ([#5](https://github.com/joundso/r_datascience/issues/5))
+* (deps): update docker/build-push-action action to v4 ([#6](https://github.com/joundso/r_datascience/issues/6))
+* (deps): update ardalanamini/auto-changelog action to v1.4.0 ([#4](https://github.com/joundso/r_datascience/issues/4))
+
+Full set of changes: [`4.2.3...5e92547`](https://github.com/joundso/r_datascience/compare/4.2.3...5e92547)
+
+## 4.2.3 (2023-03-20)
+
+#### New Features
+
+* updated quarto to `1.3.276` and RStudio to `2023.05.0-daily-90`
+* upgraded to RStudio `2023.05.0-daily-89` (R 4.2.3 is still not available over ubuntu install)
+* upgraded to R `4.2.3`, RStudio `2023.05.0-daily-60` and quarto `1.3.272`
+#### Others
+
+* updated RStudio to `v2023.05.0-daily-19` and Quarto to `v1.3.235`
+
+Full set of changes: [`4.2.2-9005...4.2.3`](https://github.com/joundso/r_datascience/compare/4.2.2-9005...4.2.3)
+
+## 4.2.2-9005 (2023-01-11)
+
+#### New Features
+
+* added @kapsner's `kdry` package to not repeat myself & updated rstudio + quarto
+
+Full set of changes: [`4.2.2-9004...4.2.2-9005`](https://github.com/joundso/r_datascience/compare/4.2.2-9004...4.2.2-9005)
+
+## 4.2.2-9004 (2023-01-05)
+
+#### New Features
+
+* added quarto template from @kapsner
+#### Fixes
+
+* updated github action and also included pat
+#### Refactorings
+
+* added github pat to package install proces
+#### Others
+
+* updated rstudio to `2023.03.0-daily+41` and quarto to `v1.3.83`
+
+Full set of changes: [`4.2.2-9003...4.2.2-9004`](https://github.com/joundso/r_datascience/compare/4.2.2-9003...4.2.2-9004)
+
+## 4.2.2-9003 (2022-12-06)
+
+#### New Features
+
+* updated quarto to `1.3.34` and rstudio to `2023.03.0-daily-4`
+* added `crosstable` for table stats
+
+Full set of changes: [`4.2.2-9002...4.2.2-9003`](https://github.com/joundso/r_datascience/compare/4.2.2-9002...4.2.2-9003)
+
+## 4.2.2-9002 (2022-11-25)
+
+#### New Features
+
+* added `sjtable2df`, updated quarto to `1.3.26` and rstudio to `2022.12.0-preview-345`
+
+Full set of changes: [`4.2.2-9001...4.2.2-9002`](https://github.com/joundso/r_datascience/compare/4.2.2-9001...4.2.2-9002)
+
+## 4.2.2-9001 (2022-11-04)
+
+#### New Features
+
+* added `emmeans` and `sjPlot` R packages
+#### Others
+
+* new version with new packages in R 4.2.2
+
+Full set of changes: [`4.2.2...4.2.2-9001`](https://github.com/joundso/r_datascience/compare/4.2.2...4.2.2-9001)
+
+## 4.2.2 (2022-11-03)
+
+#### New Features
+
+* updated to RStudio version `2022.12.0-preview-309`
+* added `mmrm` for mixed models for repeated instruments
+* upgraded to R `4.2.2`, RStudio `2022.12.0-daily-307` and quarto `1.2.258`
+
+Full set of changes: [`4.2.1-9017...4.2.2`](https://github.com/joundso/r_datascience/compare/4.2.1-9017...4.2.2)
+
+## 4.2.1-9017 (2022-10-28)
+
+#### Others
+
+* updated rstudio to version `2022.12.0-daily-293` and quarto to version `1.2.247`
+
+Full set of changes: [`4.2.1-9016...4.2.1-9017`](https://github.com/joundso/r_datascience/compare/4.2.1-9016...4.2.1-9017)
+
+## 4.2.1-9016 (2022-10-14)
+
+#### Others
+
+* updated quarto to `1.2.210` and RStudio to `2022.12.0-daily-267`
+
+Full set of changes: [`4.2.1-9015...4.2.1-9016`](https://github.com/joundso/r_datascience/compare/4.2.1-9015...4.2.1-9016)
+
+## 4.2.1-9015 (2022-10-03)
+
+#### Others
+
+* update to quarto `1.2.174` and rstudio `2022.11.0-daily-236`
+
+Full set of changes: [`4.2.1-9014...4.2.1-9015`](https://github.com/joundso/r_datascience/compare/4.2.1-9014...4.2.1-9015)
+
+## 4.2.1-9014 (2022-09-18)
+
+#### Others
+
+* new rstudio version
+* added stable release
+
+Full set of changes: [`4.2.1-9013...4.2.1-9014`](https://github.com/joundso/r_datascience/compare/4.2.1-9013...4.2.1-9014)
+
+## 4.2.1-9013 (2022-09-14)
+
+#### Others
+
+* new versions of quarto and rstudio
+* added printing version of currently building image
+
+Full set of changes: [`4.2.1-9012...4.2.1-9013`](https://github.com/joundso/r_datascience/compare/4.2.1-9012...4.2.1-9013)
+
+## 4.2.1-9012 (2022-09-07)
+
+#### New Features
+
+* added `finalfit` package
+#### Refactorings
+
+* new version with pandoc excluded, thanks to @kapsner
+
+Full set of changes: [`4.2.1-9011...4.2.1-9012`](https://github.com/joundso/r_datascience/compare/4.2.1-9011...4.2.1-9012)
+
+## 4.2.1-9011 (2022-09-05)
+
+#### Others
+
+* updated to quarto `1.2.61` and rstudio `2022.11.0-daily-166`
+
+Full set of changes: [`4.2.1-9010...4.2.1-9011`](https://github.com/joundso/r_datascience/compare/4.2.1-9010...4.2.1-9011)
+
+## 4.2.1-9010 (2022-08-29)
+
+#### New Features
+
+* added `ggfortify` and `survival` packages
+
+Full set of changes: [`4.2.1-9009...4.2.1-9010`](https://github.com/joundso/r_datascience/compare/4.2.1-9009...4.2.1-9010)
+
+## 4.2.1-9009 (2022-08-19)
+
+#### New Features
+
+* added `missForest` for imputation of missing values
+* added `VIM` for visualizing missing values
+* added `mice` package for imputation
+#### Others
+
+* updated quarto to `1.1.82` and RStudio to `2022.11.0-daily+120`
+
+Full set of changes: [`4.2.1-9008...4.2.1-9009`](https://github.com/joundso/r_datascience/compare/4.2.1-9008...4.2.1-9009)
+
+## 4.2.1-9008 (2022-08-17)
+
+#### New Features
+
+* added `DescrTab2` R package
+
+Full set of changes: [`4.2.1-9007...4.2.1-9008`](https://github.com/joundso/r_datascience/compare/4.2.1-9007...4.2.1-9008)
+
+## 4.2.1-9007 (2022-08-16)
+
+#### New Features
+
+* added ubuntu version variable thanks to @kapsner [#2](https://github.com/joundso/r_datascience/issues/2)
+#### Others
+
+* updated versions of RStudio and Quarto
+* added ubuntu codename description
+* added UBUNTU_CODENAME as dynamical variable
+* upadted RStudio to version `2022.11.0-daily-105`
+
+Full set of changes: [`4.2.1-9006...4.2.1-9007`](https://github.com/joundso/r_datascience/compare/4.2.1-9006...4.2.1-9007)
+
+## 4.2.1-9006 (2022-08-03)
+
+#### New Features
+
+* switching to pre-release build `2022.11.0-daily-83` of rstudio
+
+Full set of changes: [`4.2.1-9005...4.2.1-9006`](https://github.com/joundso/r_datascience/compare/4.2.1-9005...4.2.1-9006)
+
+## 4.2.1-9005 (2022-08-03)
+
+#### New Features
+
+* updated ubuntu to `22.04` and RStudio to `2022.07.2-557`
+
+Full set of changes: [`4.2.1-9004...4.2.1-9005`](https://github.com/joundso/r_datascience/compare/4.2.1-9004...4.2.1-9005)
+
+## 4.2.1-9004 (2022-08-02)
+
+#### New Features
+
+* added `quarto`
+
+Full set of changes: [`4.2.1-9003...4.2.1-9004`](https://github.com/joundso/r_datascience/compare/4.2.1-9003...4.2.1-9004)
+
+## 4.2.1-9003 (2022-07-29)
+
+#### Fixes
+
+* remove `reticulate` as R package
+#### Others
+
+* updated rstudio to version `2022.07.1+554`
+
+Full set of changes: [`4.2.1-9002...4.2.1-9003`](https://github.com/joundso/r_datascience/compare/4.2.1-9002...4.2.1-9003)
+
+## 4.2.1-9002 (2022-07-21)
+
+#### Others
+
+* updated RStudio Server version to `2022.07.0+548`
+
+Full set of changes: [`4.2.1-9001...4.2.1-9002`](https://github.com/joundso/r_datascience/compare/4.2.1-9001...4.2.1-9002)
+
+## 4.2.1-9001 (2022-07-06)
+
+#### Others
+
+* updated to RStudio version `2022.07.0+547`
+* added `quarto` package
+* removed build on every push
+
+Full set of changes: [`4.2.1...4.2.1-9001`](https://github.com/joundso/r_datascience/compare/4.2.1...4.2.1-9001)
+
+## 4.2.1 (2022-06-27)
+
+#### Fixes
+
+* changed ownership of R packages folder to user
+* corrected url for new RStudio version
+#### Others
+
+* updated to R 4.2.1 and RStudio 2022.07.0+536
+* trying to build new image with newest packages
+
+Full set of changes: [`4.2.0-9002...4.2.1`](https://github.com/joundso/r_datascience/compare/4.2.0-9002...4.2.1)
+
+## 4.2.0-9002 (2022-06-09)
+
+#### Others
+
+* updated rstudio to `2022.02.3+492`
+* switch of release action
+* updated
+
+Full set of changes: [`4.2.0-9001...4.2.0-9002`](https://github.com/joundso/r_datascience/compare/4.2.0-9001...4.2.0-9002)
+
+## 4.2.0-9001 (2022-05-06)
+
+#### Others
+
+* new version with updated packages
+
+Full set of changes: [`4.2.0...4.2.0-9001`](https://github.com/joundso/r_datascience/compare/4.2.0...4.2.0-9001)
+
+## 4.2.0 (2022-04-29)
+
+#### New Features
+
+* updated to R `4.2.0` and RStudio `2022.0.2+485`
+#### Fixes
+
+* used latest local image instead of remote latest tag for final image
+#### Others
+
+* updated to R 4.2.0
+
+Full set of changes: [`4.1.3-9006...4.2.0`](https://github.com/joundso/r_datascience/compare/4.1.3-9006...4.2.0)
+
+## 4.1.3-9006 (2022-04-05)
+
+#### Others
+
+* updated rstudio
+
+Full set of changes: [`4.1.3-9005...4.1.3-9006`](https://github.com/joundso/r_datascience/compare/4.1.3-9005...4.1.3-9006)
+
+## 4.1.3-9005 (2022-03-28)
+
+#### New Features
+
+* added `rattle` and `report`
+#### Others
+
+* fixed typo in dockerfile
+* updated rattle installation
+* added `rattle` stuff
+
+Full set of changes: [`4.1.3-9004...4.1.3-9005`](https://github.com/joundso/r_datascience/compare/4.1.3-9004...4.1.3-9005)
+
+## 4.1.3-9004 (2022-03-23)
+
+#### Others
+
+* added `metathis`
+* incremented version
+* added `xaringanExtra`
+
+Full set of changes: [`4.1.3-9003...4.1.3-9004`](https://github.com/joundso/r_datascience/compare/4.1.3-9003...4.1.3-9004)
+
+## 4.1.3-9003 (2022-03-23)
+
+#### Others
+
+* added `xaringan` for presentations
+
+Full set of changes: [`4.1.3-9002...4.1.3-9003`](https://github.com/joundso/r_datascience/compare/4.1.3-9002...4.1.3-9003)
+
+## 4.1.3-9002 (2022-03-23)
+
+#### Others
+
+* added leaflet
+* dep conflicts fixing
+* added `libmysqlclient-dev` as dependeny for leaflet
+* added `libgdal-dev` as dependency for `leaflet`
+
+Full set of changes: [`4.1.3-9001...4.1.3-9002`](https://github.com/joundso/r_datascience/compare/4.1.3-9001...4.1.3-9002)
+
+## 4.1.3-9001 (2022-03-23)
+
+#### Others
+
+* changed to semver tagging
+* new image tag `4.1.3.9001`
+* added `xaringan` package
+
+Full set of changes: [`4.1.3...4.1.3-9001`](https://github.com/joundso/r_datascience/compare/4.1.3...4.1.3-9001)
+
+## 4.1.3 (2022-03-14)
+
+#### New Features
+
+* updated to R version `4.1.3`
+#### Docs
+
+* updated news
+#### Others
+
+* added `ggstatsplot`
+
+Full set of changes: [`4.1.2-9019...4.1.3`](https://github.com/joundso/r_datascience/compare/4.1.2-9019...4.1.3)
+
 ## 4.1.2-9019 (2022-03-01)
 
 #### Fixes

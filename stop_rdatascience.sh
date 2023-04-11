@@ -11,3 +11,4 @@ else
 fi
 
 docker system prune -f
+bash ./update_news.sh
