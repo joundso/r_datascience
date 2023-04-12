@@ -1,12 +1,15 @@
 # R for datascience
 
-## Unreleased (2023-04-11)
+## Unreleased (2023-04-12)
 
 #### New Features
 
 * updated RStudio to `2023.05.0-daily-210` and quarto to `1.3.313`
 * added `autonewsmd` and updated RStudio and Quarto
 * included `pythdon-dev` and dqa-python package
+#### Docs
+
+* updated news.md
 #### Others
 
 * added native pipe as default to RStudio settings
@@ -15,7 +18,7 @@
 * (deps): update docker/build-push-action action to v4 ([#6](https://github.com/joundso/r_datascience/issues/6))
 * (deps): update ardalanamini/auto-changelog action to v1.4.0 ([#4](https://github.com/joundso/r_datascience/issues/4))
 
-Full set of changes: [`4.2.3...5e92547`](https://github.com/joundso/r_datascience/compare/4.2.3...5e92547)
+Full set of changes: [`4.2.3...df15848`](https://github.com/joundso/r_datascience/compare/4.2.3...df15848)
 
 ## 4.2.3 (2023-03-20)
 
