@@ -7,6 +7,9 @@
 * updated RStudio to `2023.05.0-daily-210` and quarto to `1.3.313`
 * added `autonewsmd` and updated RStudio and Quarto
 * included `pythdon-dev` and dqa-python package
+#### Fixes
+
+* (!) added localhost prefix to port to avoid network wide share of service
 #### Docs
 
 * updated news.md
@@ -18,7 +21,7 @@
 * (deps): update docker/build-push-action action to v4 ([#6](https://github.com/joundso/r_datascience/issues/6))
 * (deps): update ardalanamini/auto-changelog action to v1.4.0 ([#4](https://github.com/joundso/r_datascience/issues/4))
 
-Full set of changes: [`4.2.3...df15848`](https://github.com/joundso/r_datascience/compare/4.2.3...df15848)
+Full set of changes: [`4.2.3...f40ef82`](https://github.com/joundso/r_datascience/compare/4.2.3...f40ef82)
 
 ## 4.2.3 (2023-03-20)
 

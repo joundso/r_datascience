@@ -19,7 +19,7 @@ fi
 # docker buildx use mybuilder
 
 ## Should the docker building process build using caching? (true/false)
-docker_build_with_cache=true
+docker_build_with_cache=false
 
 ## -------------------------------------------
 ## Starting the actual script:
