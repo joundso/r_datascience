@@ -1,5 +1,13 @@
 # R for datascience
 
+## Unreleased (2023-04-24)
+
+#### New Features
+
+* added `bib2df` package
+
+Full set of changes: [`4.2.3-9005...e19bd31`](https://github.com/joundso/r_datascience/compare/4.2.3-9005...e19bd31)
+
 ## 4.2.3-9005 (2023-04-13)
 
 #### New Features
