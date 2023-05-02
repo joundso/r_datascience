@@ -1,12 +1,22 @@
 # R for datascience
 
-## Unreleased (2023-04-24)
+## Unreleased (2023-05-02)
 
 #### New Features
 
+* updated RStudio to `2023.05.0-daily-296` and quarto to `1.4.6`
+* adde `skimr` package to inspect data.tables
+
+Full set of changes: [`4.3.0...6503124`](https://github.com/joundso/r_datascience/compare/4.3.0...6503124)
+
+## 4.3.0 (2023-04-24)
+
+#### New Features
+
+* updated to R `4.3.0`, RStudio `2023.05.0-daily-293` and quarto `1.3.336`
 * added `bib2df` package
 
-Full set of changes: [`4.2.3-9005...e19bd31`](https://github.com/joundso/r_datascience/compare/4.2.3-9005...e19bd31)
+Full set of changes: [`4.2.3-9005...4.3.0`](https://github.com/joundso/r_datascience/compare/4.2.3-9005...4.3.0)
 
 ## 4.2.3-9005 (2023-04-13)
 
