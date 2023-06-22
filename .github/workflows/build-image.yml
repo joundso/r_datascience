@@ -68,6 +68,8 @@ jobs:
           tags: ${{ steps.meta-headless.outputs.tags }}
           labels: ${{ steps.meta-headless.outputs.labels }}
           cache-from: joundso/rdsc_headless_j:latest
+          build-args: |
+            GITHUB_PAT=${{ secrets.PAT }}
       - name: Docker meta RStudio
         id: meta-rstudio
         uses: docker/metadata-action@v4

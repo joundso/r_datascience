@@ -24,6 +24,7 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
     config \
     covr \
     cowplot \
+    credentials \
     crosstable \
     curl \
     data.table \
@@ -244,39 +245,42 @@ RUN R -q -e "vec <- unname(installed.packages()[,\"Package\"]); remotes::update_
 
 USER ${RSESSION_USER}
 
+ARG GITHUB_PAT
+
 # configure the other r packages
 # install phantomjs
 RUN R -q -e "webshot::install_phantomjs(); \
     ## Install shinytest dependencies (= phantomjs):
-    shinytest::installDependencies()"
+    shinytest::installDependencies(); \
+    credentials::set_github_pat('${GITHUB_PAT}'); \
+    usethis::git_sitrep()"
 
-ARG GITHUB_PAT
 
 # Install the stuff, where I participate:
 # RUN R -q -e "devtools::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/dqastats.git', ref = 'master')"
 # RUN R -q -e "devtools::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/dqagui.git', ref = 'master')"
 RUN R -q -e "remotes::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/miRacumdqa.git', ref = 'master'); \
-    remotes::install_github(repo = 'miracum/misc-dizutils', ref = 'development', auth_token = '${GITHUB_PAT}'); \
-    remotes::install_github(repo = 'miracum/misc-diztools', ref = 'dev', auth_token = '${GITHUB_PAT}'); \
-    remotes::install_github(repo = 'joundso/mainzelliste-connector', ref = 'development', auth_token = '${GITHUB_PAT}'); \
-    remotes::install_github(repo = 'joundso/rkafka', ref = 'development', auth_token = '${GITHUB_PAT}'); \
-    remotes::install_github(repo = 'joundso/gpas_connector', ref = 'development', auth_token = '${GITHUB_PAT}'); \
-    remotes::install_github(repo = 'joundso/requirements', ref = 'development', auth_token = '${GITHUB_PAT}'); \
-    remotes::install_github(repo = 'joundso/usRbility', ref = 'dev', auth_token = '${GITHUB_PAT}'); \
-    remotes::install_github(repo = 'joundso/cleaR', ref = 'dev', auth_token = '${GITHUB_PAT}'); \
+    remotes::install_github(repo = 'miracum/misc-dizutils', ref = 'development'); \
+    remotes::install_github(repo = 'miracum/misc-diztools', ref = 'dev'); \
+    remotes::install_github(repo = 'joundso/mainzelliste-connector', ref = 'development'); \
+    remotes::install_github(repo = 'joundso/rkafka', ref = 'development'); \
+    remotes::install_github(repo = 'joundso/gpas_connector', ref = 'development'); \
+    remotes::install_github(repo = 'joundso/requirements', ref = 'development'); \
+    remotes::install_github(repo = 'joundso/usRbility', ref = 'dev'); \
+    remotes::install_github(repo = 'joundso/cleaR', ref = 'dev'); \
 
     ## Other stuff:
     ## Formatting comments and RMarkdown tables:
-    remotes::install_github(repo = 'mwip/beautifyR', auth_token = '${GITHUB_PAT}'); \
+    remotes::install_github(repo = 'mwip/beautifyR'); \
 
     ## Addin to easy insert roxygen formatting options:
-    remotes::install_github('matt-dray/snorkel', auth_token = '${GITHUB_PAT}'); \
+    remotes::install_github('matt-dray/snorkel'); \
 
     ## Explore data and create ggplots:
-    remotes::install_github('dreamRs/esquisse', auth_token = '${GITHUB_PAT}'); \
+    remotes::install_github('dreamRs/esquisse'); \
 
     ## Data Analytics:
-    remotes::install_github('radiant-rstats/radiant.update', upgrade = 'never', auth_token = '${GITHUB_PAT}'); \
+    remotes::install_github('radiant-rstats/radiant.update', upgrade = 'never'); \
     radiant.update::radiant.update(); \
 
     ## Presentations with xaringan:
