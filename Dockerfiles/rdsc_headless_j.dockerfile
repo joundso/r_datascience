@@ -251,9 +251,9 @@ ARG GITHUB_PAT
 # install phantomjs
 RUN R -q -e "webshot::install_phantomjs(); \
     ## Install shinytest dependencies (= phantomjs):
-    shinytest::installDependencies(); \
-    credentials::set_github_pat('${GITHUB_PAT}'); \
-    usethis::git_sitrep()"
+    shinytest::installDependencies()"
+# RUN R -q -e "credentials::set_github_pat('${GITHUB_PAT}'); \
+#     usethis::git_sitrep()"
 
 
 # Install the stuff, where I participate:

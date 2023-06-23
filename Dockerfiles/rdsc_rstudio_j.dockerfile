@@ -12,7 +12,7 @@ ARG \
     ## - Pre-Relese Builds: https://dailies.rstudio.com/rstudio/spotted-wakerobin/server/jammy/
     ##   or: https://dailies.rstudio.com/rstudio/
     ##   or: https://dailies.rstudio.com/rstudio/desert-sunflower/server/focal-amd64/
-    RSTUDIO_VERSION="2023.08.0-daily-55"
+    RSTUDIO_VERSION="2023.08.0-daily-59"
 
 # USER ${RSESSION_USER}
 
