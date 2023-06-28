@@ -1,6 +1,6 @@
 # R for datascience
 
-## 4.3.1 (2023-06-22)
+## 4.3.1 (2023-06-23)
 
 #### New Features
 
@@ -14,6 +14,7 @@
 #### Others
 
 * added github-pat to ci
+* removed github pat creation in non-interactive mode
 * updated to R `4.3.1`, RStudio `2023.08.0-daily-34` and Quarto `1.4.151`
 * updated RStudio to version `2023.05.0-daily-325` and quarto to version `1.4.25`
 
