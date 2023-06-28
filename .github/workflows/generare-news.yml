@@ -1,5 +1,9 @@
 name: autochangelog
-on: [push]
+
+## Run manually only:
+on: workflow_dispatch
+# on: [push]
+
 jobs:
   generate-changelog:
     runs-on: ubuntu-latest
