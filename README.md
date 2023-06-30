@@ -1,7 +1,7 @@
 # R for datascience
 
 <!-- badges: start -->
-[![autochangelog](https://github.com/joundso/r_datascience/actions/workflows/generare-news.yml/badge.svg)](https://github.com/joundso/r_datascience/actions/workflows/generare-news.yml)
+[![autochangelog](https://github.com/joundso/r_datascience/actions/workflows/generare-news.yml/badge.svg)](https://github.com/joundso/r_datascience/blob/master/CHANGELOG.md)
 <!-- badges: end -->
 
 This repo holds several files for my personal dockerized R environment including:

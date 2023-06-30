@@ -2,8 +2,8 @@ name: Generate changelog
 on:
   release:
     types: [created, edited]
-  push:
-    branches: [main, master, dev]
+  # push:
+  #   branches: [main, master, dev]
 
 jobs:
   generate-changelog:
@@ -12,11 +12,12 @@ jobs:
     - uses: actions/checkout@v2
       with:
         fetch-depth: 0
-    - uses: BobAnkh/auto-generate-changelog@v1.2.4
+    - uses: BobAnkh/auto-generate-changelog@v1.2.5
       with:
         # REPO_NAME: '<YourUserName>/<YourRepoName>'
-        ACCESS_TOKEN: ${{secrets.GITHUB_TOKEN}}
+        ACCESS_TOKEN: ${{secrets.PAT}}
         # PATH: 'CHANGELOG.md'
         # COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
-        PULL_REQUEST: 'autochangelog'
+        BRANCH: 'autochangelog'
+        PULL_REQUEST: 'dev'
         TYPE: 'feat:Feature,fix:Bug Fixes,docs:Documentation,refactor:Refactor,perf:Performance Improvements'

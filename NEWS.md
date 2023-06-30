@@ -1,9 +1,18 @@
 # R for datascience
 
-## 4.3.1 (2023-06-23)
+## Unreleased (2023-06-30)
+
+#### Others
+
+* disabled automate autochangelog run
+
+Full set of changes: [`4.3.1...72bdbdb`](https://github.com/joundso/r_datascience/compare/4.3.1...72bdbdb)
+
+## 4.3.1 (2023-06-28)
 
 #### New Features
 
+* updated to R 4.3.1
 * updated to quarto `1.4.78` and rstudio `2023.05.0-daily-373`
 * updated quarto to version `1.4.70` and rstudio to version `2023.05.0-daily-366`
 * updated RStudio to `2023.05.0-daily-296` and quarto to `1.4.6`
