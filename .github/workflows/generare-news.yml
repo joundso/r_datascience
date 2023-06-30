@@ -18,6 +18,6 @@ jobs:
         ACCESS_TOKEN: ${{secrets.PAT}}
         # PATH: 'CHANGELOG.md'
         # COMMIT_MESSAGE: 'docs(CHANGELOG): update release notes'
-        BRANCH: 'dev'
-        PULL_REQUEST: 'autochangelog'
+        BRANCH: 'autochangelog'
+        PULL_REQUEST: 'dev'
         TYPE: 'feat:Feature,fix:Bug Fixes,docs:Documentation,refactor:Refactor,perf:Performance Improvements'
