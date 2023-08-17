@@ -35,6 +35,7 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
     DescrTab2 \
     devtools \
     distill \
+    DIZtools \
     doParallel \
     dotenv \
     dplyr \
@@ -261,12 +262,12 @@ RUN R -q -e "webshot::install_phantomjs(); \
 # RUN R -q -e "devtools::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/dqagui.git', ref = 'master')"
 RUN R -q -e "remotes::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/miRacumdqa.git', ref = 'master'); \
     remotes::install_github(repo = 'miracum/misc-dizutils', ref = 'development'); \
-    remotes::install_github(repo = 'miracum/misc-diztools', ref = 'dev'); \
-    remotes::install_github(repo = 'joundso/mainzelliste-connector', ref = 'development'); \
-    remotes::install_github(repo = 'joundso/rkafka', ref = 'development'); \
-    remotes::install_github(repo = 'joundso/gpas_connector', ref = 'development'); \
-    remotes::install_github(repo = 'joundso/requirements', ref = 'development'); \
-    remotes::install_github(repo = 'joundso/usRbility', ref = 'dev'); \
+    # remotes::install_github(repo = 'miracum/misc-diztools', ref = 'dev'); \
+    # remotes::install_github(repo = 'joundso/mainzelliste-connector', ref = 'development'); \
+    # remotes::install_github(repo = 'joundso/rkafka', ref = 'development'); \
+    # remotes::install_github(repo = 'joundso/gpas_connector', ref = 'development'); \
+    # remotes::install_github(repo = 'joundso/requirements', ref = 'development'); \
+    # remotes::install_github(repo = 'joundso/usRbility', ref = 'dev'); \
     remotes::install_github(repo = 'joundso/cleaR', ref = 'dev'); \
 
     ## Other stuff:
@@ -293,20 +294,12 @@ RUN R -q -e "remotes::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/
     ## https://cran.r-project.org/src/contrib/Archive/RGtk2/
     ## https://cran.r-project.org/package=RGtk2
     ## here:)
-    install.packages('https://cran.r-project.org/src/contrib/Archive/RGtk2/RGtk2_2.20.36.3.tar.gz', repos=NULL); \
-    install.packages('rattle', repos='https://rattle.togaware.com', type='source'); \
+    # install.packages('https://cran.r-project.org/src/contrib/Archive/RGtk2/RGtk2_2.20.36.3.tar.gz', repos=NULL); \
+    # install.packages('rattle', repos='https://rattle.togaware.com', type='source'); \
 
     ## Stuff to don't repeat myself:
     remotes::install_github('kapsner/kdry') \
     "
-
-## CRAN packages with my participation:
-ARG pack="DIZutils"
-RUN for package in $pack; do \   
-    R -q -e "p <- \"$package\"; remotes::update_packages(packages = p, build_manual = FALSE, quiet = TRUE, upgrade = \"always\")"; \
-    done && \
-    rm -rf /tmp/*
-
 
 
 USER root
