@@ -298,7 +298,7 @@ RUN R -q -e "remotes::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/
     # install.packages('rattle', repos='https://rattle.togaware.com', type='source'); \
 
     ## Stuff to don't repeat myself:
-    remotes::install_github('kapsner/kdry') \
+    remotes::install_github('kapsner/kdry'); \
     "
 
 
