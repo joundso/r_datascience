@@ -1,12 +1,32 @@
 # R for datascience
 
-## Unreleased (2023-06-30)
+## 4.3.1-9001 (2023-08-30)
 
+#### Docs
+
+* (changelog): update release notes ([#8](https://github.com/joundso/r_datascience/issues/8))
+* updated Changelog path
+* (changelog): update release notes ([#7](https://github.com/joundso/r_datascience/issues/7))
+* (changelog): update release notes
+* (changelog): update release notes
 #### Others
 
+* disabled changelog generation for every push
+* updated ci version
+* switched to master
+* changes branch and pull request branch
+* switched to PAT
+* updated version tag
+* updated autochangelog ci file
+* updated autochangelog ci
 * disabled automate autochangelog run
+* updated RStudio to `2023.09.0-daily-381` and quarto to `1.4.339`
+* temporarily disabled some packages
+* updated images
+* disabled push-triggered autochangelog
+* shortly switching on push-triggerd autochangelog
 
-Full set of changes: [`4.3.1...72bdbdb`](https://github.com/joundso/r_datascience/compare/4.3.1...72bdbdb)
+Full set of changes: [`4.3.1...4.3.1-9001`](https://github.com/joundso/r_datascience/compare/4.3.1...4.3.1-9001)
 
 ## 4.3.1 (2023-06-28)
 
