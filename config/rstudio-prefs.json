@@ -66,5 +66,6 @@
     "show_doc_outline_rmd": true,
     "default_encoding": "UTF-8",
     "insert_native_pipe_operator": true,
-    "jobs_tab_visibility": "shown"
+    "jobs_tab_visibility": "shown",
+    "show_rmd_render_command": true
 }
