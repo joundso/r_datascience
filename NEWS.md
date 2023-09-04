@@ -1,6 +1,6 @@
 # R for datascience
 
-## 4.3.1-9001 (2023-08-30)
+## 4.3.1-9001 (2023-09-01)
 
 #### Docs
 
@@ -20,6 +20,7 @@
 * updated autochangelog ci file
 * updated autochangelog ci
 * disabled automate autochangelog run
+* updated image
 * updated RStudio to `2023.09.0-daily-381` and quarto to `1.4.339`
 * temporarily disabled some packages
 * updated images
