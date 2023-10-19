@@ -1,5 +1,15 @@
 # R for datascience
 
+## 4.3.1-9002 (2023-09-22)
+
+#### Others
+
+* updated to quarto `1.4.376` and RStudio `2023.12.0-daily-46`
+* udpated rstudio-prefs.json
+* udpates news.md
+
+Full set of changes: [`4.3.1-9001...4.3.1-9002`](https://github.com/joundso/r_datascience/compare/4.3.1-9001...4.3.1-9002)
+
 ## 4.3.1-9001 (2023-09-01)
 
 #### Docs
