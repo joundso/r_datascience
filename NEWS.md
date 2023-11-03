@@ -1,5 +1,21 @@
 # R for datascience
 
+## 4.3.2 (2023-11-02)
+
+#### New Features
+
+* updated R to `4.3.2`, quarto to `1.4.468` and rstudio to `2023.12.0-daily-253`
+
+Full set of changes: [`4.3.1-9003...4.3.2`](https://github.com/joundso/r_datascience/compare/4.3.1-9003...4.3.2)
+
+## 4.3.1-9003 (2023-10-19)
+
+#### New Features
+
+* updated quarto to `1.4.429` and rstudio to `2023.12.0-daily-201`
+
+Full set of changes: [`4.3.1-9002...4.3.1-9003`](https://github.com/joundso/r_datascience/compare/4.3.1-9002...4.3.1-9003)
+
 ## 4.3.1-9002 (2023-09-22)
 
 #### Others
