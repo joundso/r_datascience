@@ -12,6 +12,7 @@ ARG NCPUS=${NCPUS:--1}
 
 RUN install2.r --error --skipinstalled -n $NCPUS \
     abind \
+    arsenal \
     autonewsmd \
     bib2df \
     bigmemory \
@@ -42,6 +43,7 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
     DT \
     dtplyr \
     dunn.test \
+    eeptools \
     effects \
     emmeans \
     fhircrackr \
