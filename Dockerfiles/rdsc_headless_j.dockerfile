@@ -153,6 +153,8 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
     utf8 \
     ## `VIM` for visualizing missing values:
     VIM \
+    ## `webshot` only for phantomjs:
+    # webshot \
     wesanderson \
     wordcloud \
     wordcloud2 \
@@ -250,9 +252,9 @@ ARG GITHUB_PAT
 
 # configure the other r packages
 # install phantomjs
-RUN R -q -e "webshot::install_phantomjs(); \
-    ## Install shinytest dependencies (= phantomjs):
-    shinytest::installDependencies()"
+# RUN R -q -e "webshot::install_phantomjs(); \
+#     ## Install shinytest dependencies (= phantomjs):
+#     shinytest::installDependencies()"
 # RUN R -q -e "credentials::set_github_pat('${GITHUB_PAT}'); \
 #     usethis::git_sitrep()"
 
@@ -298,8 +300,7 @@ RUN R -q -e "remotes::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/
     # install.packages('rattle', repos='https://rattle.togaware.com', type='source'); \
 
     ## Stuff to don't repeat myself:
-    remotes::install_github('kapsner/kdry'); \
-    "
+    remotes::install_github('kapsner/kdry')"
 
 
 USER root
