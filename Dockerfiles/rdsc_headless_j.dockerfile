@@ -301,6 +301,10 @@ RUN R -q -e "remotes::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/
     # install.packages('https://cran.r-project.org/src/contrib/Archive/RGtk2/RGtk2_2.20.36.3.tar.gz', repos=NULL); \
     # install.packages('rattle', repos='https://rattle.togaware.com', type='source'); \
 
+    # Enable installation with pre-built Rust library binary, or enable Rust caching
+    Sys.setenv(NOT_CRAN = "true"); \
+    install.packages("polars", repos = "https://rpolars.r-universe.dev"); \
+
     ## Stuff to don't repeat myself:
     remotes::install_github('kapsner/kdry')"
 
