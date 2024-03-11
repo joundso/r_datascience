@@ -303,7 +303,7 @@ RUN R -q -e "remotes::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/
 
     # Enable installation with pre-built Rust library binary, or enable Rust caching
     Sys.setenv(NOT_CRAN ='true'); \
-    install.packages("polars", repos = "https://rpolars.r-universe.dev"); \
+    install.packages('polars', repos = 'https://rpolars.r-universe.dev'); \
 
     ## Stuff to don't repeat myself:
     remotes::install_github('kapsner/kdry')"
