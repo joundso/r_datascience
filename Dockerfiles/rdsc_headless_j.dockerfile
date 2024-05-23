@@ -123,6 +123,7 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
     Rmisc \
     roxygen2 \
     RPostgres \
+    RPresto \
     RSQLite \
     rstudioapi \
     see \
