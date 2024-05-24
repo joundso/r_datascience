@@ -286,8 +286,10 @@ RUN R -q -e "remotes::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/
     remotes::install_github('dreamRs/esquisse'); \
 
     ## Data Analytics:
-    remotes::install_github('radiant-rstats/radiant.update', upgrade = 'never'); \
-    radiant.update::radiant.update(); \
+    options(repos = c(RSM = 'https://radiant-rstats.github.io/minicran', CRAN = 'https://cloud.r-project.org')); \
+    install.packages('radiant'); \
+    # remotes::install_github('radiant-rstats/radiant.update', upgrade = 'never'); \
+    # radiant.update::radiant.update(); \
 
     ## Presentations with xaringan:
     # remotes::install_github('yihui/xaringan'); \
