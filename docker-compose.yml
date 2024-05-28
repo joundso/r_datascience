@@ -1,4 +1,3 @@
-version: "3.9" # optional since v1.27.0
 services:
   rdatascience:
     image: joundso/rdsc_rstudio_j:${VERSION_TAG}
