@@ -1,4 +1,4 @@
-FROM ubuntu:22.04
+FROM ubuntu:24.04
 
 LABEL org.label-schema.schema-version="1.0" \
     org.label-schema.url="https://github.com/joundso/r_datascience"
