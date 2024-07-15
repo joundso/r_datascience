@@ -40,7 +40,7 @@ ENV RSTUDIO_FILE="rstudio-server-${RSTUDIO_VERSION}-amd64.deb"
 
 RUN wget \
     -O rstudio_installer.deb \
-    -q https://s3.amazonaws.com/rstudio-ide-build/server/$(lsb-release -cs)/amd64/${RSTUDIO_FILE} && \
+    -q https://s3.amazonaws.com/rstudio-ide-build/server/$(lsb_release -cs | head -2)/amd64/${RSTUDIO_FILE} && \
     # -q https://download2.rstudio.org/server/$(lsb_release -cs)/amd64/${RSTUDIO_FILE}
     dpkg -i rstudio_installer.deb && \
     rm -f rstudio_installer.deb
