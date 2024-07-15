@@ -1,4 +1,4 @@
-FROM ubuntu:24.04
+FROM ubuntu:24.04@sha256:2e863c44b718727c860746568e1d54afd13b2fa71b160f5cd9058fc436217b30
 
 LABEL org.label-schema.schema-version="1.0" \
     org.label-schema.url="https://github.com/joundso/r_datascience"
@@ -11,6 +11,8 @@ ENV DEBIAN_FRONTEND=noninteractive
 ARG NCPUS=${NCPUS:--1}
 ARG DISPLAY
 ENV DISPLAY=${DISPLAY}
+# define image user
+ENV USER="ubuntu" 
 
 # install essential packages
 RUN apt-get update && apt-get install -y --no-install-recommends \
@@ -75,7 +77,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     openjdk-17-jdk \
     python3 \
     python3-pip \
-    python3.10-dev \
+    # python3.10-dev \
+    python3-full \
     software-properties-common \
     tar \
     unixodbc-dev \
@@ -91,15 +94,15 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     apt-get autoremove -y
 
 ########################
-# define image user
-ENV USER="user" 
+
 # set rsession user here
 ENV RSESSION_USER=${USER} 
 ENV USER_UID=1000
 ENV USER_GID=${USER_UID}
 
-RUN groupadd --gid ${USER_GID} ${USER} && \
-    useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USER}
+## Since Ubuntu 24.04 there already is a `ubuntu` user with UID 1000:
+# RUN groupadd --gid ${USER_GID} ${USER} && \
+#     useradd --uid ${USER_UID} --gid ${USER_GID} -m ${USER}
 ########################
 
 RUN locale-gen en_US.utf8 \
@@ -117,46 +120,25 @@ ARG TARGETPLATFORM
 ENV TARGETPLATFORM=${TARGETPLATFORM}
 ENV ARM_LABEL="linux/arm64"
 ENV AMD_LABEL="linux/amd64"
+ENV PYTHON_VENV_PATH="/home/${USER}/python/venv"
 
-# RUN echo "Current architecture: ${TARGETPLATFORM}"
 
-# ## ARM:
-# RUN if [ "$TARGETPLATFORM" = "$ARM_LABEL" ] ; \
-#     then echo '!ARM!' && \
-#     curl -sLo ~/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-aarch64.sh && \
-#     chmod +x ~/miniconda.sh ; \
-#     fi
-
-# ## AMD:
-# RUN if [ "$TARGETPLATFORM" = "$AMD_LABEL" ] ; \
-#     then echo '!AMD!' && \
-#     curl -sLo ~/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
-#     chmod +x ~/miniconda.sh ; \
-#     fi
-
-# # RUN curl -sLo ~/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
-# #     chmod +x ~/miniconda.sh
-# RUN ~/miniconda.sh -b -p ~/miniconda  && \
-#     rm ~/miniconda.sh
+RUN curl -sLo ~/miniconda.sh https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh && \
+    chmod +x ~/miniconda.sh
+RUN ~/miniconda.sh -b -p ~/miniconda  && \
+    rm ~/miniconda.sh
 
 # RUN conda install -y python==${PYVERSION} && \
 #     conda clean -ya
 
-# # install some (python) prerequisites
-# RUN conda install -y \
-#     numpy \
-#     pip \
-#     pyyaml \
-#     requests \
-#     ruamel_yaml \
-#     setuptools \
-#     wheel
-
-RUN yes | pip install --no-cache-dir \
-    auto-changelog \
-    ## For auto-changelog (breaking as of 2022-03-01, see <https://github.com/aws/aws-sam-cli/issues/3661>):
-    markupsafe==2.0.1 \
-    testresources
+# COPY ./Dockerfiles/requirements.txt /opt/py/requirements.txt
+## To speed up build process for cached layers,
+## the py-packages are direct in the dockerfile now.
+## So no (unchanged) file needs to be copied:
+RUN pip3 install --no-cache-dir \
+    auto-changelog==0.6.0  \
+    markupsafe==2.1.5 \
+    testresources==2.0.1
 
 ENV PATH="/home/${USER}/.local/bin:$PATH"
 
@@ -177,41 +159,6 @@ USER root
 RUN wget -qO- https://cloud.r-project.org/bin/linux/ubuntu/marutter_pubkey.asc | tee -a /etc/apt/trusted.gpg.d/cran_ubuntu_key.asc
 # add the R 4.0 repo from CRAN -- adjust 'focal' to 'groovy' or 'bionic' as needed
 RUN add-apt-repository "deb https://cloud.r-project.org/bin/linux/ubuntu $(lsb_release -cs)-cran40/"
-
-## ARM only:
-RUN if [ "$TARGETPLATFORM" = "$ARM_LABEL" ] ; \
-    then echo '!ARM!' && \
-    apt-get update && apt-get install -y --no-install-recommends \
-    gfortran \
-    libreadline6-dev \
-    libx11-dev \
-    libxt-dev \
-    libpng-dev \
-    libjpeg-dev \
-    libcairo2-dev \
-    xvfb \
-    libzstd-dev \
-    texinfo \
-    texlive \
-    texlive-fonts-extra \
-    screen \
-    wget \
-    zlib1g-dev \
-    libbz2-dev \
-    liblzma-dev \
-    libpcre2-dev \
-    libcurl4-openssl-dev && \
-    # clear caches
-    rm -rf /var/lib/apt/lists/* && \
-    rm -rf /tmp/* && \
-    rm -rf /root/.cache/pip/* && \
-    rm -rf /home/${USER}/.cache/pip/* && \
-    apt-get clean all && \
-    apt-get autoclean && \
-    apt-get autoremove -y; \
-    fi
-
-ARG CACHEBREAKER=1
 
 RUN apt-get update && apt-get install -y --no-install-recommends \
     lmodern \

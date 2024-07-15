@@ -1,0 +1,3 @@
+auto-changelog==0.6.0 
+markupsafe==2.1.5
+testresources==2.0.1
