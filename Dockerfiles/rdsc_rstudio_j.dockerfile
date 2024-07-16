@@ -12,7 +12,7 @@ ARG \
     ## - Pre-Relese Builds: https://dailies.rstudio.com/rstudio/spotted-wakerobin/server/jammy/
     ##   or: https://dailies.rstudio.com/rstudio/
     ##   or: https://dailies.rstudio.com/rstudio/cranberry-hibiscus/server/jammy-amd64/
-    RSTUDIO_VERSION="2024.07.0-daily-310"
+    RSTUDIO_VERSION="2024.10.0-daily-2"
 
 # USER ${RSESSION_USER}
 
@@ -31,17 +31,18 @@ RUN curl -o quarto-linux-amd64.deb -L https://github.com/quarto-dev/quarto-cli/r
 RUN quarto add kapsner/authors-block --no-prompt
 
 
-## UBUNTU_CODENAME (22.04 = jammy):
+## UBUNTU_CODENAME (22.04 = jammy)/
+## UBUNTU_CODENAME (24.04 = noble):
 ## - `lsb_release -cs` (needs to be installed first: `apt-get update && apt-get install -y lsb-release && apt-get clean all`)
 ## - `cat /etc/os-release | grep UBUNTU_CODENAME | cut -d "=" -f 2-` (without any additional package)
 ## - Details: https://stackoverflow.com/questions/58395566/lsb-release-command-not-found-in-latest-ubuntu-docker-container
 
+ENV UBUNTU_CODENAME=jammy
 ENV RSTUDIO_FILE="rstudio-server-${RSTUDIO_VERSION}-amd64.deb"
 
 RUN wget \
     -O rstudio_installer.deb \
-    -q https://s3.amazonaws.com/rstudio-ide-build/server/$(lsb_release -cs | head -2)/amd64/${RSTUDIO_FILE} && \
-    # -q https://download2.rstudio.org/server/$(lsb_release -cs)/amd64/${RSTUDIO_FILE}
+    -q https://s3.amazonaws.com/rstudio-ide-build/server/${UBUNTU_CODENAME}/amd64/${RSTUDIO_FILE} && \
     dpkg -i rstudio_installer.deb && \
     rm -f rstudio_installer.deb
 
