@@ -11,11 +11,11 @@ services:
     # - DISPLAY=192.168.0.1:0
     # volumes:
       ## work:
-      # - /d/Docker/container/docker-share/R:/home/user/share
-      # - /d/git-local:/home/user/git-local
+      # - /d/Docker/container/docker-share/R:/home/ubuntu/share
+      # - /d/git-local:/home/ubuntu/git-local
     ## home:
-    # - /k/Docker/docker-share/R:/home/user/share
-    # - /d/git-local:/home/user/git-local
+    # - /k/Docker/docker-share/R:/home/ubuntu/share
+    # - /d/git-local:/home/ubuntu/git-local
     tty: true
     privileged: true
     hostname: docker-rdsc
