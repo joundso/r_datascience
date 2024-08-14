@@ -276,6 +276,8 @@ RUN R -q -e "remotes::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/
     remotes::install_github(repo = 'joundso/cleaR', ref = 'dev'); \
 
     ## Other stuff:
+    remotes::install_github(repo = 'blmoore/rjsonpath'); \
+    
     ## Formatting comments and RMarkdown tables:
     remotes::install_github(repo = 'mwip/beautifyR'); \
 
