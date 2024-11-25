@@ -310,6 +310,8 @@ RUN R -q -e "remotes::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/
     Sys.setenv(NOT_CRAN ='true'); \
     install.packages('polars', repos = 'https://rpolars.r-universe.dev'); \
 
+    remotes::install_github('nrennie/messy'); \
+
     ## Stuff to don't repeat myself:
     remotes::install_github('kapsner/kdry')"
 
