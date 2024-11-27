@@ -265,7 +265,7 @@ ARG GITHUB_PAT
 # Install the stuff, where I participate:
 # RUN R -q -e "devtools::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/dqastats.git', ref = 'master')"
 # RUN R -q -e "devtools::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/dqagui.git', ref = 'master')"
-RUN R -q -e "remotes::install_git(url = 'https://gitlab.miracum.org/miracum/dqa/miRacumdqa.git', ref = 'master'); \
+RUN R -q -e "remotes::install_git(repo = 'miracum/dqa-miracumdqa', ref = 'master'); \
     remotes::install_github(repo = 'miracum/misc-dizutils', ref = 'development'); \
     # remotes::install_github(repo = 'miracum/misc-diztools', ref = 'dev'); \
     # remotes::install_github(repo = 'joundso/mainzelliste-connector', ref = 'development'); \
