@@ -95,6 +95,7 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
     parsedate \
     pheatmap \
     plotly \
+    plumber \
     plyr \
     psych \
     quarto \

@@ -12,7 +12,7 @@ ARG \
     ## - Pre-Relese Builds: https://dailies.rstudio.com/rstudio/spotted-wakerobin/server/jammy/
     ##   or: https://dailies.rstudio.com/rstudio/
     ##   or: https://dailies.rstudio.com/rstudio/mariposa-orchid/server/jammy-amd64/
-    RSTUDIO_VERSION="2025.04.0-daily-225"
+    RSTUDIO_VERSION="2025.04.0-daily-279"
 
 # USER ${RSESSION_USER}
 
