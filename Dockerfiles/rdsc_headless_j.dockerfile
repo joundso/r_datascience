@@ -93,6 +93,7 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
     pagedown \
     parallel \
     parsedate \
+    pdftools \
     pheatmap \
     plotly \
     plumber \

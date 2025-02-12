@@ -61,6 +61,8 @@ RUN apt-get update && apt-get install -y --no-install-recommends \
     libopenblas-dev \
     libopenmpi-dev \
     libpng-dev \
+    ## For `pdftools`:
+    libpoppler-cpp-dev \
     libpq-dev \
     libsasl2-dev \
     libssl-dev \
