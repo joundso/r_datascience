@@ -5,14 +5,15 @@ LABEL org.label-schema.schema-version="1.0" \
 
 ARG \
     ## Quarto: https://github.com/quarto-dev/quarto-cli/releases
-    QUARTO_VERSION="1.8.15" \
+    QUARTO_VERSION="1.9.0" \
 
     ## RStudio: 
     ## - Semi-Stable: https://www.rstudio.com/products/rstudio/download/preview/
     ## - Pre-Relese Builds: https://dailies.rstudio.com/rstudio/spotted-wakerobin/server/jammy/
     ##   or: https://dailies.rstudio.com/rstudio/
-    ##   or: https://dailies.rstudio.com/rstudio/cucumberleaf-sunflower/server/noble-amd64/
-    RSTUDIO_VERSION="2025.08.0-daily-245"
+    ##   or: https://dailies.rstudio.com/rstudio/apple-blossom/server/noble-amd64/
+    RSTUDIO_VERSION="2025.11.0-daily-156"
+
 
 # USER ${RSESSION_USER}
 
