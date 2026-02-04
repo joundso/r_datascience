@@ -33,7 +33,8 @@ RUN install2.r --error --skipinstalled -n $NCPUS \
     DBI  \
     desc \
     DescTools \
-    DescrTab2 \
+    ## 2026-02-04: DescrTab2 ist wohl offline...
+    # DescrTab2 \
     devtools \
     distill \
     DIZtools \
